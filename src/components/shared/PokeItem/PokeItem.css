@@ -1,0 +1,27 @@
+.poke_item {
+  background-image: linear-gradient(#ffe1c6, #ffcb05);
+  border-radius: 25px;
+  width: 80%;
+}
+
+.poke_item article {
+  justify-content: center;
+  display: flex;
+  /* display: inline-block; */
+  flex-direction: column;
+}
+
+.poke_item img {
+  height: 100px;
+}
+
+.poke_item div {
+  display: flex;
+  justify-content: space-evenly;
+  background-color: #fff;
+  border-radius: 0 0 25px 25px;
+  line-height: 1.5rem;
+}
+
+.poke_item p {
+}

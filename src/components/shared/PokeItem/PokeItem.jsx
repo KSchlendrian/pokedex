@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import "./PokeItem.css";
 
 const PokeItem = (props) => {
   const [pokemonDetails, setPokemonDetails] = useState({});
@@ -10,19 +11,23 @@ const PokeItem = (props) => {
       .then((data) => setPokemonDetails(data));
   }, []);
 
+  const capitalizeFirstLetter = (string) => {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+  };
+
   return (
-    <section>
+    <section className="poke_item">
       <article>
-        <Link to={"/details"}>
+        <Link to={`/details/${pokemonDetails.id}`}>
           <img
-            src={
-              pokemonDetails.sprites?.other["official-artwork"].front_default
-            }
+            src={pokemonDetails.sprites?.other.dream_world.front_default}
             alt=""
           />
         </Link>
-        <p>{pokemonDetails.id}</p>
-        <p>{props.name}</p>
+        <div>
+          <p>#{pokemonDetails.id}</p>
+          <p>{capitalizeFirstLetter(props.name)}</p>
+        </div>
       </article>
     </section>
   );

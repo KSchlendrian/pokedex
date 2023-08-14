@@ -1,10 +1,9 @@
-import PokeTypes from "../PokeTypes/PokeTypes";
-import Details from "../Details/Details";
 import PokeList from "../../shared/PokeList/PokeList";
+import "./Home.css";
 
 const Home = () => {
   return (
-    <section>
+    <section className="home">
       <PokeList />
     </section>
   );

@@ -15,7 +15,7 @@ function App() {
             element={<Home />}
           />
           <Route
-            path="details"
+            path="/details/:id"
             element={<Details />}
           />
         </Routes>

@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
 import PokeItem from "../PokeItem/PokeItem";
+import { apiBaseLink } from "../../utilities/api";
 
 const PokeList = () => {
   const [allPokemon, setAllPokemon] = useState([]);
 
   useEffect(() => {
-    fetch(`https://pokeapi.co/api/v2/pokemon/`)
+    fetch(`${apiBaseLink}/pokemon/?limit=1281`)
       .then((res) => res.json())
       .then((data) => setAllPokemon(data.results));
   }, []);
